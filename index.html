@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== 검색·공유용 기본 정보 =====
+       title: 브라우저 탭과 검색 결과에 보이는 제목
+       description: 검색 결과에 보이는 한두 줄 설명
+       og:*: 카카오톡·슬랙 등에 링크를 붙였을 때 뜨는 미리보기 카드 정보 -->
+  <title>이영준 | 예비 데이터 사이언티스트 포트폴리오</title>
+  <meta name="description" content="추천 시스템과 XAI(설명 가능한 AI)에 관심이 많은 예비 데이터 사이언티스트 이영준의 포트폴리오입니다. LightGCN 음악 추천 연구(학회 은상), CNC 불량 예측, 감정 기반 영화 추천, RAG 상담 챗봇 프로젝트를 소개합니다." />
+  <meta name="author" content="이영준" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta property="og:title" content="이영준 | 예비 데이터 사이언티스트" />
+  <meta property="og:description" content="추천 시스템 · XAI에 관심이 많은 이영준의 프로젝트와 연구를 소개합니다." />
+  <!-- 배포 후에는 아래 두 주소를 실제 사이트 주소로 바꿔 주세요. (미리보기 이미지는 전체 주소여야 잘 뜹니다) -->
+  <meta property="og:url" content="https://dldudwnsdlek.github.io/portfolio/" />
+  <meta property="og:image" content="https://dldudwnsdlek.github.io/portfolio/assets/og-image.jpg" />
+  <meta property="og:image:alt" content="이영준 프로필 사진과 '예비 데이터 사이언티스트' 문구" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#16171b" />
+
+  <!-- 화면이 잠깐 깜빡이지 않도록, 저장해 둔 테마(다크/라이트)를 페이지가 그려지기 전에 먼저 적용 -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) { /* 저장소를 못 쓰면 기본값(다크) 그대로 사용 */ }
+    })();
+  </script>
+
+  <!-- 한글 폰트: Pretendard (페이지에 쓰인 글자만 골라 받아서 가볍게 열림) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- defer: HTML을 다 읽은 뒤에 스크립트를 실행 (첫 화면이 더 빨리 보임) -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- 키보드 사용자를 위한 "본문 바로가기" 링크 (Tab 키를 누르면 나타남) -->
+  <a class="skip-link" href="#content">본문 바로가기</a>
+
+  <div class="layout">
+    <!-- ===================================================
+         왼쪽 고정 영역 (모바일에서는 맨 위에 표시)
+         이름 · 직함 · 한 줄 소개 · 핵심 링크 · 메뉴
+         =================================================== -->
+    <header class="sidebar">
+      <div class="sidebar__top">
+        <h1 class="name"><a href="#top">이영준</a></h1>
+        <!-- 테마 전환 버튼 -->
+        <button class="theme-toggle" type="button" aria-label="라이트 모드로 바꾸기">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+        </button>
+      </div>
+
+      <p class="role">예비 데이터 사이언티스트 · 추천 시스템 &amp; XAI</p>
+      <p class="tagline">연구와 실무를 연결하는 데이터 사이언티스트를 목표로, 추천 시스템과 설명 가능한 AI를 공부하고 만듭니다.</p>
+
+      <!-- 핵심 링크 3개: GitHub / 이메일 / 이력서 PDF -->
+      <div class="cta">
+        <a class="btn btn--primary" href="https://github.com/dldudwnsdlek" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="mailto:youngjoon4u@naver.com">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg>
+          이메일
+        </a>
+        <!-- [여기에 입력] 이력서 PDF를 assets/resume.pdf 로 넣은 뒤,
+             아래 버튼의 aria-disabled="true"와 class의 is-disabled를 지우고 href="assets/resume.pdf" 로 바꿔 주세요. -->
+        <a class="btn is-disabled" aria-disabled="true" title="이력서 PDF 준비 중" data-resume>
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg>
+          이력서 PDF
+        </a>
+      </div>
+
+      <!-- 메뉴: 누르면 해당 영역으로 부드럽게 이동 -->
+      <nav class="nav" aria-label="주요 메뉴">
+        <ul>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#projects">프로젝트</a></li>
+          <li><a href="#skills">기술</a></li>
+          <li><a href="#timeline">경력·활동</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===================================================
+         오른쪽 스크롤 영역 (본문)
+         =================================================== -->
+    <main id="content" class="content" tabindex="-1">
+      <span id="top"></span>
+
+      <!-- ===== 소개 (About) ===== -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <h2 id="about-title" class="section__title">소개</h2>
+        <div class="about">
+          <div class="about__text">
+            <p>
+              안녕하세요, <strong>데이터 사이언스</strong>, 그중에서도 <strong>추천 시스템</strong>과
+              <strong>XAI</strong>(설명 가능한 AI: 모델이 왜 그런 답을 냈는지 보여 주는 기술)에 관심이 많은 이영준입니다.
+            </p>
+            <p>
+              강남대학교 경영학과·데이터사이언스 전공(학점 3.92)이며, 아이펠 데이터사이언티스트 과정과 LG Aimers를 수료했습니다.
+              K-pop 멤버-그룹 관계를 담은 지식 그래프를 LightGCN에 융합한 음악 추천 연구로 한국디지털콘텐츠학회에서 은상을 받았습니다.
+            </p>
+            <p>
+              모델의 점수만 보지 않고, SHAP 같은 여러 XAI 기법으로 "왜 그런 결과가 나왔는지"를 교차 확인하는 습관을 가지고 있습니다.
+              연구와 실무를 연결하는 데이터 사이언티스트로 성장하는 것이 최종 목표입니다.
+            </p>
+          </div>
+          <picture class="about__photo">
+            <source srcset="assets/profile.webp" type="image/webp" />
+            <img src="assets/profile.jpg" width="400" height="480" loading="lazy" decoding="async"
+                 alt="흰 셔츠를 입고 의자에 앉아 미소 짓는 이영준의 프로필 사진" />
+          </picture>
+        </div>
+      </section>
+
+      <!-- ===== 프로젝트 (Projects) =====
+           실제 카드 내용은 script.js 맨 위의 PROJECTS 목록에서 만들어집니다. -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <h2 id="projects-title" class="section__title">프로젝트</h2>
+        <p class="section__lead">각 프로젝트를 <em>문제 → 해결(막혔던 점 포함) → 결과</em> 순서로 정리했습니다.</p>
+        <div class="projects" data-projects></div>
+        <noscript><p>프로젝트 목록을 보려면 자바스크립트를 켜 주세요.</p></noscript>
+      </section>
+
+      <!-- ===== 기술 (Skills) — script.js 의 SKILLS 목록에서 만들어짐 ===== -->
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <h2 id="skills-title" class="section__title">기술</h2>
+        <p class="section__lead">프로젝트에서 실제로 사용한 기술만 모았습니다.</p>
+        <div class="skills" data-skills></div>
+      </section>
+
+      <!-- ===== 경력·교육·활동 타임라인 — script.js 의 TIMELINE 목록에서 만들어짐 ===== -->
+      <section id="timeline" class="section" aria-labelledby="timeline-title">
+        <h2 id="timeline-title" class="section__title">경력 · 교육 · 활동</h2>
+        <ol class="timeline" data-timeline></ol>
+
+        <h3 class="subhead">봉사활동</h3>
+        <ul class="plain-list" data-volunteer></ul>
+      </section>
+
+      <!-- ===== 연락처 (Contact) ===== -->
+      <section id="contact" class="section contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="section__title">연락처</h2>
+        <p class="contact__lead">추천 시스템과 데이터 분석 이야기라면 언제든 환영합니다. 편하게 연락 주세요.</p>
+        <a class="contact__mail" href="mailto:youngjoon4u@naver.com">youngjoon4u@naver.com</a>
+        <div class="cta cta--center">
+          <a class="btn btn--primary" href="mailto:youngjoon4u@naver.com">메일 보내기</a>
+          <a class="btn" href="https://github.com/dldudwnsdlek" target="_blank" rel="noopener">GitHub 보기</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>© <span data-year></span> 이영준. HTML · CSS · JavaScript로 직접 만들었습니다.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
